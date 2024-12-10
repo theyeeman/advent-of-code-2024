@@ -1,11 +1,30 @@
 import time
 
 
+def parse_input(inputs):
+    l_list, r_list = [], []
+
+    for row in inputs:
+        left, right = row.split('   ')
+
+        l_list.append(int(left))
+        r_list.append(int(right))
+
+    return sorted(l_list), sorted(r_list)
+
+
 def main():
-    # inputs = standard_func.get_input_as_str('input.txt')
-    inputs = standard_func.get_input_as_str('test.txt')
+    inputs = standard_func.get_input_as_str('input.txt')
+    # inputs = standard_func.get_input_as_str('test.txt')
     
-    # Code goes here
+    l_list, r_list = parse_input(inputs)
+
+    total_sum = 0
+
+    for a, b in zip(l_list, r_list):
+        total_sum += abs(a - b)
+
+    print(total_sum)
 
 
 # Boilerplate code below
