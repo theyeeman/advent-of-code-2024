@@ -1,11 +1,22 @@
 import time
+import re
 
 
 def main():
-    # inputs = standard_func.get_input_as_str('input.txt')
-    inputs = standard_func.get_input_as_str('test.txt')
+    inputs = standard_func.get_input_as_str('input.txt')
+    # inputs = standard_func.get_input_as_str('test.txt')
     
-    # Code goes here
+    total_sum = 0
+
+    regex_pattern = r"mul\((\d+),(\d+)\)"
+
+    for input in inputs:
+        multiply_pairs = re.findall(regex_pattern, input)
+
+    for a, b in multiply_pairs:
+        total_sum += int(a) * int(b)
+
+    print(total_sum)
 
 
 # Boilerplate code below
